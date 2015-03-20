@@ -52,8 +52,6 @@ class Text(Field):
             aspects.append('min_length=%r' % self.min_length)
         if self.max_length is not None:
             aspects.append('max_length=%r' % self.max_length)
-        if self.pattern is not None:
-            aspects.append('pattern=%r' % self.pattern.pattern)
         if not self.strip:
             aspects.append('strip=False')
         return super(Text, self).__repr__(aspects)

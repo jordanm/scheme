@@ -1,7 +1,10 @@
-*.py[c|o]
+*.py[cod]
 *.sw*
 .project
 MANIFEST
+*.egg
+*.egg-info
+__pycache__
 dist
 .coverage
 cover
@@ -9,3 +12,4 @@ docs/_build
 docs/_doctrees
 docs/html
 build
+README.html

@@ -11,6 +11,7 @@ Let's start by creating a fairly simple schema. Our running example will be an A
             'name': Text(description='the name for the account', nonempty=True),
             'email': Email(),
             'gender': Enumeration('male female'),
+
             'active': Boolean(default=True),
             'interests': Sequence(Text(nonempty=True), unique=True),
             'logins': Integer(minimum=0, default=0),
