@@ -1,0 +1,11 @@
+*.py[c|o]
+*.sw*
+.project
+MANIFEST
+dist
+.coverage
+cover
+docs/_build
+docs/_doctrees
+docs/html
+build

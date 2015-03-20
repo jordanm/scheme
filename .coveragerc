@@ -1,0 +1,12 @@
+[run]
+branch = True
+source = scheme
+
+[report]
+exclude_lines = 
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    raise$
+    pass
