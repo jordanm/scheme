@@ -70,7 +70,7 @@ Features
 
 - Simple, declarative schema definition
 - Rich set of field types: *binary, boolean, date, datetime, decimal, email, enumeration, float integer, map, object, sequence, structure, text, time, token, tuple, uuid*
-- Support for various serialization formats: *json, structured text, xml, yaml*
+- Support for various serialization formats: *csv, json, structured text, xml, yaml*
 - Rich validation with descriptive error reporting: *minimum/maximum length/value, pattern matching, etc.*
 - Hierarchical variable interpolation
 - Schema-mediated extraction of values from arbitrary objects
