@@ -468,11 +468,11 @@ class Field(object):
 
         return value
 
-    def read(self, path, **params):
+    def read(self, path, format=None, **params):
         """Reads the content of the file at ``path``, unserializes it, then processes it as an
         inbound value for this field."""
 
-        data = Format.read(path, **params)
+        data = Format.read(path, format, self, **params)
         return self.process(data, INBOUND, True)
 
     def screen(self, **params):
@@ -492,7 +492,7 @@ class Field(object):
 
         value = self.process(value, OUTBOUND, True, ancestry)
         if format:
-            value = Format.formats[format].serialize(value, **params)
+            value = Format.formats[format].serialize(value, self, **params)
         return value
 
     def transform(self, transformer):
@@ -511,7 +511,7 @@ class Field(object):
         it as an inbound value for this field."""
 
         if format:
-            value = Format.formats[format].unserialize(value, **params)
+            value = Format.formats[format].unserialize(value, self, **params)
         return self.process(value, INBOUND, True, ancestry)
 
     @classmethod
@@ -531,7 +531,7 @@ class Field(object):
         then writes the serialized version to ``path``."""
 
         value = self.process(value, OUTBOUND, True)
-        Format.write(path, value, format, **params)
+        Format.write(path, value, format, self, **params)
 
     @classmethod
     def _construct_parameter(cls, parameter):

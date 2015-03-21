@@ -32,14 +32,14 @@ class Yaml(Format):
     whitespace = re.compile(r'^\s*$')
 
     @classmethod
-    def serialize(cls, value):
+    def serialize(cls, value, schema=None):
         content = cls._serialize_value(value, 0)
         if isinstance(content, list):
             content = '\n'.join(content)
         return content
 
     @classmethod
-    def unserialize(cls, value):
+    def unserialize(cls, value, schema=None):
         return yaml.load(value)
 
     @classmethod

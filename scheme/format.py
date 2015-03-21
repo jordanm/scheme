@@ -33,7 +33,7 @@ class Format(object):
     name = None
 
     @classmethod
-    def read(cls, path, format=None, quiet=False, **params):
+    def read(cls, path, format=None, schema=None, quiet=False, **params):
         if not (path and os.path.exists(path)):
             if quiet:
                 return False
@@ -55,18 +55,18 @@ class Format(object):
                 raise ValueError(format)
 
         with open(path) as openfile:
-            return format.unserialize(openfile.read(), **params)
+            return format.unserialize(openfile.read(), schema, **params)
 
     @classmethod
-    def serialize(cls, value, format, **params):
-        return cls.formats[format].serialize(value, **params)
+    def serialize(cls, value, format, schema=None, **params):
+        return cls.formats[format].serialize(value, schema, **params)
 
     @classmethod
-    def unserialize(cls, value, format, **params):
-        return cls.formats[format].unserialize(value, **params)
+    def unserialize(cls, value, format, schema=None, **params):
+        return cls.formats[format].unserialize(value, schema, **params)
 
     @classmethod
-    def write(cls, path, value, format=None, **params):
+    def write(cls, path, value, format=None, schema=None, **params):
         if format:
             if format in cls.formats:
                 format = cls.formats[format]
@@ -82,4 +82,4 @@ class Format(object):
                 raise ValueError(format)
 
         with open(path, 'w+') as openfile:
-            openfile.write(format.serialize(value, **params))
+            openfile.write(format.serialize(value, schema, **params))

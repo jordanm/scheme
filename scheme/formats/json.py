@@ -12,9 +12,9 @@ class Json(Format):
     name = 'json'
 
     @classmethod
-    def serialize(cls, value):
+    def serialize(cls, value, schema=None):
         return json.dumps(value)
 
     @classmethod
-    def unserialize(cls, value):
+    def unserialize(cls, value, schema=None):
         return json.loads(value)

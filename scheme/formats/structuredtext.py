@@ -16,11 +16,11 @@ class StructuredText(Format):
     ESCAPED_TOKENS_EXPR = re.compile(r'\\([{}\[\]])')
 
     @classmethod
-    def serialize(cls, value):
+    def serialize(cls, value, schema=None):
         return cls._serialize_content(value)
 
     @classmethod
-    def unserialize(cls, value, parse_numbers=False):
+    def unserialize(cls, value, schema=None, parse_numbers=False):
         if not isinstance(value, string):
             raise ValueError(value)
         if value[0] in ('{', '['):
