@@ -1,6 +1,10 @@
+try:
+    from unittest2 import TestCase
+except ImportError:
+    from unittest import TestCase
+
 from scheme import *
 from tests.util import *
-from unittest import TestCase
 
 class TestUrlEncoded(FormatTestCase):
     format = UrlEncoded

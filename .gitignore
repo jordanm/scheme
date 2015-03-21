@@ -8,6 +8,7 @@ __pycache__
 dist
 .coverage
 cover
+.tox
 docs/_build
 docs/_doctrees
 docs/html

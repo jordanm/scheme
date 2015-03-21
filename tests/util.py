@@ -1,7 +1,11 @@
 from datetime import date, datetime, time, timedelta
 from inspect import getargspec
-from unittest import TestCase
 from uuid import uuid4
+
+try:
+    from unittest2 import TestCase
+except ImportError:
+    from unittest import TestCase
 
 from scheme.exceptions import *
 from scheme.field import *

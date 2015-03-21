@@ -1,5 +1,9 @@
+try:
+    from unittest2 import TestCase
+except ImportError:
+    from unittest import TestCase
+
 from scheme.interpolation import UndefinedParameterError, interpolate_parameters
-from unittest import TestCase
 
 class TestInterpolation(TestCase):
     def test_template_interpolation(self):
