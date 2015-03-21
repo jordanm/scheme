@@ -381,6 +381,12 @@ class Field(object):
         if included:
             return self
 
+    def get(self, key, default=None):
+        """Gets the child field of this field identified by ``key``, if this field is a structural
+        field that has keyed child fields."""
+
+        raise TypeError(self)
+
     def instantiate(self, value, key=None):
         """Attempts to instantiate ``value`` using the instantiator specified for this field. If
         ``value`` is ``None`` or this field does not specify an instantiator, ``value`` is returned

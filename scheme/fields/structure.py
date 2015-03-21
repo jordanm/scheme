@@ -269,8 +269,6 @@ class Structure(Field):
         return defaults
 
     def get(self, key, default=None):
-        """need doc"""
-
         return self.structure.get(key, default)
 
     def insert(self, field, overwrite=False):

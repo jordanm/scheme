@@ -116,6 +116,12 @@ class Tuple(Field):
         else:
             return self
 
+    def get(self, key, default=None):
+        try:
+            return self.values[key]
+        except IndexError:
+            return default
+
     def instantiate(self, value, key=None):
         if value is None:
             return None
