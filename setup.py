@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='scheme',
-    version='2.0.1',
+    version='2.0.2',
     description='A declarative schema framework.',
     long_description=open('README.rst').read(),
     license='BSD',

@@ -13,4 +13,4 @@ __all__ = ['surrogate']
 for module in (common, exceptions, field, timezone, element, fields, format, formats):
     __all__.extend(module.__all__)
 
-__version__ = '2.0.1'
+__version__ = '2.0.2'
