@@ -1,6 +1,9 @@
 Scheme: Declarative Schema Framework
 ====================================
 
+.. image:: https://badge.fury.io/py/scheme.svg
+    :target: http://badge.fury.io/py/scheme
+
 **Homepage:** `https://github.com/arterial-io/scheme <https://github.com/arterial-io/scheme>`_
 
 Scheme is a declarative, general-purpose data schema framework for Python. It provides a simple approach to defining data schemas, and with those schemas enables serialization and unserialization to and from a variety of data formats, rich validation with descriptive error handling, hierarchical variable interpolation, and other interesting means of interacting with data.
