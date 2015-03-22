@@ -13,7 +13,7 @@ setup(
     keywords='schema data validation structured api',
     install_requires=[
         'Jinja2>=2.7',
-        'PyYaml>=3',
+        'PyYAML>=3',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
